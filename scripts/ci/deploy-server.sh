@@ -21,7 +21,7 @@ echo "Stopping containers..."
 ssh "$DEPLOY_APPSERVER_SSH_HOST" "cd '$remoteTempDir' && docker-compose -p '$COMPOSE_PROJECT_NAME' -f docker-compose.yml -f docker-compose.ci.prod.yml down" || exit 1
 
 echo "Running containers..."
-ssh "$DEPLOY_APPSERVER_SSH_HOST" "cd '$remoteTempDir' && docker-compose -p '$COMPOSE_PROJECT_NAME' -f docker-compose.yml -f docker-compose.ci.prod.yml up -d" || exit 1
+ssh "$DEPLOY_APPSERVER_SSH_HOST" "cd '$remoteTempDir' && docker-compose -p '$COMPOSE_PROJECT_NAME' -f docker-compose.yml -f docker-compose.ci.prod.yml up -d --no-build" || exit 1
 
 # TODO: Run tests
 # TODO: Roll back on failure
