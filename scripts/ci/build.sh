@@ -39,7 +39,7 @@ for ((i = 0; i < $imageCount; ++i)); do
 done
 
 echo "Building image..."
-docker-compose build || exit 1
+docker-compose -f docker-compose.yml -f docker-compose.ci.prod.yml build || exit 1
 
 # Save images in order to cache them
 for ((i = 0; i < $imageCount; ++i)); do
