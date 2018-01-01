@@ -1,0 +1,18 @@
+version: "3.4"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile_web
+    restart: unless-stopped
+    volumes:
+      - www_data:/usr/share/nginx/html
+  ftp:
+    build:
+      context: .
+      dockerfile: Dockerfile_ftp
+    restart: unless-stopped
+    volumes:
+      - www_data:/usr/share/nginx/html
+volumes:
+  www_data:

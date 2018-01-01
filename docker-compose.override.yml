@@ -1,0 +1,13 @@
+version: "3.4"
+services:
+  web:
+    ports:
+      - "5001:80"
+  ftp:
+    environment:
+      FTP_USER: satochat
+      FTP_PASSWORD: satochat
+      PUBLICHOST: localhost
+    ports:
+      - "6001:21"
+      - "30000-30009:30000-30009"
