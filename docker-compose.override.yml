@@ -10,4 +10,3 @@ services:
       FTP_WAN_HOST: localhost
     ports:
       - "6001:21"
-      - "30000-30009:30000-30009"
