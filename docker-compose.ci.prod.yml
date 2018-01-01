@@ -7,3 +7,7 @@ services:
   ftp:
     ports:
       - $UPDATE_SERVER_FTP_PORT:21
+    environment:
+      - FTP_USER
+      - FTP_PASSWORD
+      - FTP_WAN_HOST

@@ -13,6 +13,6 @@ services:
       dockerfile: Dockerfile_ftp
     restart: unless-stopped
     volumes:
-      - www_data:/usr/share/nginx/html
+      - "www_data:/home/ftpusers/satochat"
 volumes:
   www_data:
