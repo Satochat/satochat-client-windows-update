@@ -5,9 +5,9 @@ services:
     ports:
       - $UPDATE_SERVER_HTTP_PORT:80
   ftp:
-    ports:
-      - $UPDATE_SERVER_FTP_PORT:21
     environment:
       - FTP_USER
       - FTP_PASSWORD
       - FTP_WAN_HOST
+    ports:
+      - $UPDATE_SERVER_FTP_PORT:21
