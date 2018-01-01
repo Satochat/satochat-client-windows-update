@@ -1,6 +1,3 @@
-language: csharp
-mono: none
-dotnet: 2.0.0
 dist: trusty
 sudo: required
 
@@ -22,4 +19,4 @@ deploy:
     script: ./scripts/ci/deploy.sh
     skip_cleanup: true
     on:
-      branch: master
+      branch: docker
