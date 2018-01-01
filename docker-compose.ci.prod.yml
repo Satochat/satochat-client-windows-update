@@ -5,6 +5,7 @@ services:
     ports:
       - $UPDATE_SERVER_HTTP_PORT:80
   ftp:
+    image: $DOCKER_TAG_FTP
     environment:
       - FTP_USER
       - FTP_PASSWORD
