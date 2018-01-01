@@ -15,7 +15,7 @@ remoteTempDir=$(ssh "$DEPLOY_APPSERVER_SSH_HOST" "mktemp -d") || exit 1
 echo "Remote temporary directory: $remoteTempDir"
 
 cat docker-compose.ci.prod.yml | envsubst | tee docker-compose.ci.prod.yml
-scp docker-compose.yml docker-compose.ci.prod.yml Dockerfile "$DEPLOY_APPSERVER_SSH_HOST:$remoteTempDir" || exit 1
+scp docker-compose.yml docker-compose.ci.prod.yml Dockerfile* "$DEPLOY_APPSERVER_SSH_HOST:$remoteTempDir" || exit 1
 
 echo "Stopping containers..."
 ssh "$DEPLOY_APPSERVER_SSH_HOST" "cd '$remoteTempDir' && docker-compose -p '$COMPOSE_PROJECT_NAME' -f docker-compose.yml -f docker-compose.ci.prod.yml down" || exit 1
