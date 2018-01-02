@@ -7,8 +7,8 @@ services:
   ftp:
     image: $DOCKER_TAG_FTP
     environment:
-      - FTP_USER
-      - FTP_PASSWORD
-      - FTP_WAN_HOST
+      FTP_USER: $FTP_USER
+      FTP_PASSWORD: "$FTP_PASSWORD"
+      FTP_WAN_HOST: $FTP_WAN_HOST
     ports:
       - "$UPDATE_SERVER_FTP_PORT:21"
